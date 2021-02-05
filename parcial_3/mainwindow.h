@@ -5,15 +5,19 @@
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QMessageBox>
+#include <math.h>
+#include <string>
+using namespace std;
 
 #include "bala_uno.h"
 #include "canon_uno.h"
+#include "condiciones.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+class MainWindow : public QMainWindow, public condiciones
 {
     Q_OBJECT
 
@@ -38,7 +42,8 @@ private:
     QList<bala_uno *> balas;
     QList<canon_uno *> canones;
 
-    float tiempo;
+    float tiempo = 0;
     float limite_y = 700;
+    bool escenario_creado = false;
 };
 #endif // MAINWINDOW_H

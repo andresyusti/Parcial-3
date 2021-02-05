@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     bala_uno.cpp \
     canon_uno.cpp \
+    condiciones.cpp \
     fisicas.cpp \
     main.cpp \
     mainwindow.cpp
@@ -18,6 +19,7 @@ SOURCES += \
 HEADERS += \
     bala_uno.h \
     canon_uno.h \
+    condiciones.h \
     fisicas.h \
     mainwindow.h
 
