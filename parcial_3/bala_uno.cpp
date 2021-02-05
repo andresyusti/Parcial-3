@@ -1,5 +1,10 @@
 #include "bala_uno.h"
 
+fisicas *bala_uno::getFisicas_bala() const
+{
+    return fisicas_bala;
+}
+
 bala_uno::bala_uno(float angulo_, float velocidad_inicial_)
 {
     angulo = angulo_;

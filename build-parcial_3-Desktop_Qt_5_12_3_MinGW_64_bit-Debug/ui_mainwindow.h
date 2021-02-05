@@ -26,7 +26,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QLabel *label;
+    QLabel *tiempo;
     QLabel *label_2;
     QDoubleSpinBox *distancia;
     QDoubleSpinBox *alturao;
@@ -47,9 +47,9 @@ public:
         MainWindow->resize(1600, 730);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        label = new QLabel(centralwidget);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(1375, 20, 100, 30));
+        tiempo = new QLabel(centralwidget);
+        tiempo->setObjectName(QString::fromUtf8("tiempo"));
+        tiempo->setGeometry(QRect(1375, 20, 100, 30));
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(1310, 20, 60, 30));
@@ -100,7 +100,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
-        label->setText(QApplication::translate("MainWindow", "0.0", nullptr));
+        tiempo->setText(QApplication::translate("MainWindow", "0.0", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Tiempo:</span></p></body></html>", nullptr));
         iniciar->setText(QApplication::translate("MainWindow", "Prueba", nullptr));
         escenario->setText(QApplication::translate("MainWindow", "Escenario", nullptr));

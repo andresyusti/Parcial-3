@@ -21,6 +21,7 @@ public:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,QWidget *widget);
 
     void actualizar_bala(float poscx, float poscy, float tiempo, float limite_y);
+    fisicas *getFisicas_bala() const;
 };
 
 #endif // BALA_UNO_H

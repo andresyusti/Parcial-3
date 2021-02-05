@@ -24,27 +24,40 @@ MainWindow::~MainWindow()
 
 void MainWindow::actualizar(){
     for (int i = 0; i < balas.size(); i++){
-        balas[i]->actualizar_bala(0, ui->alturao->value(), tiempo, limite_y);
+        balas[i]->actualizar_bala(canones.at(0)->getX(), ui->alturao->value(), tiempo, limite_y);
+        if(balas[i]->collidesWithItem(canones.at(1))){
+            QString val;
+            val = "";
+            val += "Lo mataste, perro";
+            QMessageBox::about (this,"CRACK", val);
+            timer->stop();
+        }
+        else if(balas[i]->getFisicas_bala()->getPosy() < ui->alturad->value() && balas[i]->getFisicas_bala()->getPosx() > ui->distancia->value()){
+            QString val;
+            val = "";
+            val += "No le diste, perro";
+            QMessageBox::about (this,"malo", val);
+            timer->stop();
+        }
     }
-    tiempo += 0.06;
+    tiempo += 1;
+    ui->tiempo->setText(QString::number(tiempo));
 }
 
 
 void MainWindow::on_iniciar_clicked()
 {
-    balas.push_back(new bala_uno(45, 150));
-    balas.back()->setPos(0, limite_y - ui->alturao->value());
+    balas.push_back(new bala_uno(65, 120));
+    balas.back()->setPos(100, limite_y - ui->alturao->value());
     scene->addItem(balas.back());
-    timer->start(60);
+    timer->start(1000);
 
 }
 
 void MainWindow::on_escenario_clicked()
 {
-    canones.push_back(new canon_uno(0, limite_y - ui->alturao->value(), 70, 70));
-    canones.back()->setPos(100, limite_y - ui->alturao->value());
+    canones.push_back(new canon_uno(100, limite_y - ui->alturao->value(), 70, 70));
     scene->addItem(canones.back());
     canones.push_back(new canon_uno(ui->distancia->value(), limite_y - ui->alturad->value(), 70, 70));
-    canones.back()->setPos(ui->distancia->value(), limite_y - ui->alturad->value());
     scene->addItem(canones.back());
 }

@@ -18,6 +18,8 @@ public:
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,QWidget *widget);
 
+    float getX() const;
+    float getY() const;
 };
 
 #endif // CANON_UNO_H

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QTimer>
 #include <QGraphicsScene>
+#include <QMessageBox>
 
 #include "bala_uno.h"
 #include "canon_uno.h"
