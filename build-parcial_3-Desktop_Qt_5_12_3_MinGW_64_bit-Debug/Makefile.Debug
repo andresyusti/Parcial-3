@@ -244,6 +244,7 @@ debug/moc_mainwindow.cpp: ../parcial_3/mainwindow.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtGui/qtextoption.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/QGraphicsItem \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		../parcial_3/balas_dos.h \
 		../parcial_3/canon_uno.h \
 		../parcial_3/condiciones.h \
 		debug/moc_predefs.h \
@@ -605,6 +606,7 @@ debug/main.o: ../parcial_3/main.cpp ../parcial_3/mainwindow.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtGui/qtextoption.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/QGraphicsItem \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		../parcial_3/balas_dos.h \
 		../parcial_3/canon_uno.h \
 		../parcial_3/condiciones.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/QApplication \
@@ -739,6 +741,7 @@ debug/mainwindow.o: ../parcial_3/mainwindow.cpp ../parcial_3/mainwindow.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtGui/qtextoption.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/QGraphicsItem \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		../parcial_3/balas_dos.h \
 		../parcial_3/canon_uno.h \
 		../parcial_3/condiciones.h \
 		ui_mainwindow.h \

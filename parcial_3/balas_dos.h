@@ -1,12 +1,12 @@
-#ifndef BALA_UNO_H
-#define BALA_UNO_H
+#ifndef BALAS_DOS_H
+#define BALAS_DOS_H
 #include "fisicas.h"
 
 #include <QPainter>
 #include <QGraphicsItem>
 #include <QGraphicsScene>
 
-class bala_uno: public QGraphicsItem
+class bala_dos: public QGraphicsItem
 {
 private:
     float angulo;
@@ -17,7 +17,7 @@ private:
     fisicas * fisicas_bala;
 
 public:
-    bala_uno(float angulo_, float velocidad_inicial_, float radio_);
+    bala_dos(float angulo_, float velocidad_inicial_, float radio_);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,QWidget *widget);
 
@@ -25,8 +25,6 @@ public:
     fisicas *getFisicas_bala() const;
     void setTiempo(float value);
     float getTiempo() const;
-    float getAngulo() const;
-    float getVelocidad_inicial() const;
 };
 
-#endif // BALA_UNO_H
+#endif // BALAS_DOS_H

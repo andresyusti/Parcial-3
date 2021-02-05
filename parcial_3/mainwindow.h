@@ -10,6 +10,7 @@
 using namespace std;
 
 #include "bala_uno.h"
+#include "balas_dos.h"
 #include "canon_uno.h"
 #include "condiciones.h"
 
@@ -39,7 +40,8 @@ private:
     QGraphicsScene *scene;
     QTimer *timer;
 
-    QList<bala_uno *> balas;
+    QList<bala_uno *> balao;
+    QList<bala_uno *> balad;
     QList<canon_uno *> canones;
 
     float tiempo = 0;
