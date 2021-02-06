@@ -10,6 +10,16 @@ float bala_uno::getVelocidad_inicial() const
     return velocidad_inicial;
 }
 
+int bala_uno::getRastro() const
+{
+    return rastro;
+}
+
+void bala_uno::setRastro(int value)
+{
+    rastro = value;
+}
+
 bala_uno::bala_uno(float angulo_, float velocidad_inicial_, float radio_)
 {
     radio = radio_;
@@ -40,7 +50,8 @@ QRectF bala_uno::boundingRect() const
 
 void bala_uno::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->setBrush(Qt::red);
+    painter->setBrush(Qt::transparent);
+    QPen pain (Qt::red);
     painter->drawEllipse(boundingRect());
     painter->setBrush(Qt::green);
     painter->drawEllipse(boundingRect().center(), 3, 3);

@@ -13,6 +13,7 @@ using namespace std;
 #include "balas_dos.h"
 #include "canon_uno.h"
 #include "condiciones.h"
+#include "rastro.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -44,9 +45,10 @@ private:
     QList<bala_uno *> balad;
     QList<bala_uno *> balaod;
     QList<canon_uno *> canones;
+    QList<rastro *> rastros;
 
     float tiempo = 0;
-    float limite_y = 700;
-    bool escenario_creado = false;
+    float limite_y = 720;
+    bool escenario_creado = false, comienzo = false;
 };
 #endif // MAINWINDOW_H

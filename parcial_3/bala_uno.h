@@ -13,6 +13,7 @@ private:
     float velocidad_inicial;
     float radio;
     float tiempo = 0;
+    int rastro = 1;
 
     fisicas * fisicas_bala;
 
@@ -27,6 +28,8 @@ public:
     float getTiempo() const;
     float getAngulo() const;
     float getVelocidad_inicial() const;
+    int getRastro() const;
+    void setRastro(int value);
 };
 
 #endif // BALA_UNO_H

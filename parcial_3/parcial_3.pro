@@ -14,14 +14,16 @@ SOURCES += \
     condiciones.cpp \
     fisicas.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    rastro.cpp
 
 HEADERS += \
     bala_uno.h \
     canon_uno.h \
     condiciones.h \
     fisicas.h \
-    mainwindow.h
+    mainwindow.h \
+    rastro.h
 
 FORMS += \
     mainwindow.ui

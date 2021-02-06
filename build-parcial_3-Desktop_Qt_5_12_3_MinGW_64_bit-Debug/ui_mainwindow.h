@@ -72,7 +72,7 @@ public:
         alturad->setMaximum(100000000000000003889357755108838843130737249295202013334302382007691294289384896763079965607877701387326460311941213291353170611409437561654018367221268940354434586262616943544566455807655946219322240663552.000000000000000);
         graphicsView = new QGraphicsView(centralwidget);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
-        graphicsView->setGeometry(QRect(0, 0, 1280, 722));
+        graphicsView->setGeometry(QRect(0, 0, 1282, 722));
         iniciar = new QPushButton(centralwidget);
         iniciar->setObjectName(QString::fromUtf8("iniciar"));
         iniciar->setGeometry(QRect(1410, 140, 90, 30));
