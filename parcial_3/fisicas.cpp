@@ -1,4 +1,14 @@
 #include "fisicas.h"
+float fisicas::getVelx() const
+{
+    return velx;
+}
+
+float fisicas::getVely() const
+{
+    return vely;
+}
+
 fisicas::fisicas()
 {
     posx = 300;

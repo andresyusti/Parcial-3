@@ -42,6 +42,7 @@ private:
 
     QList<bala_uno *> balao;
     QList<bala_uno *> balad;
+    QList<bala_uno *> balaod;
     QList<canon_uno *> canones;
 
     float tiempo = 0;

@@ -6,7 +6,6 @@ class condiciones
 {
 private:
     float velocidad_inicial = 0;
-    float velocidad_aux;
     float angulo = 0;
     float posbx;
     float posby;
@@ -19,8 +18,8 @@ private:
 public:
     condiciones();
     void ofensivo_golpe_defensivo(float posox, float posoy, float posdx, float posdy);
-    void defensivo_defiende_ofensivo(float posox, float posoy, float posdx, float posdy, float vel_io, float angulo_o);
-    void ofensivo_defiende_defensivo();
+    void defensivo_defiende_ofensivo(float posox, float posoy, float posdx, float posdy, float vel_io, float vel_ox, float vel_oy);
+    void ofensivo_defiende_defensivo(float vel_ox, float vel_oy, float vel_dx, float vel_dy, float posox, float posoy, float posdx, float posdy);
     float getVelocidad_inicial() const;
     float getAngulo() const;
 };

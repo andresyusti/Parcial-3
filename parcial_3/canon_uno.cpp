@@ -25,6 +25,9 @@ QRectF canon_uno::boundingRect() const
 
 void canon_uno::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    painter->setBrush(Qt::red);
+    painter->setBrush(Qt::blue);
     painter->drawRect(boundingRect());
+    painter->setBrush(Qt::green);
+    painter->drawEllipse(boundingRect().center(), 3, 3);
+
 }

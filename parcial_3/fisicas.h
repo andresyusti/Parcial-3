@@ -19,6 +19,8 @@ public:
 
     float getPosx() const;
     float getPosy() const;
+    float getVelx() const;
+    float getVely() const;
 };
 
 #endif // FISICAS_H

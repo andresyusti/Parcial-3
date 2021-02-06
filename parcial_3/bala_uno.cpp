@@ -42,6 +42,8 @@ void bala_uno::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
 {
     painter->setBrush(Qt::red);
     painter->drawEllipse(boundingRect());
+    painter->setBrush(Qt::green);
+    painter->drawEllipse(boundingRect().center(), 3, 3);
 }
 
 void bala_uno::actualizar_bala(float poscx, float poscy, float limite_y)
