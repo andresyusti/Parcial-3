@@ -35,6 +35,16 @@ private slots:
 
     void on_escenario_clicked();
 
+    void on_punto_1_clicked();
+
+    void on_punto_2_clicked();
+
+    void on_punto_3_clicked();
+
+    void on_punto_4_clicked();
+
+    void on_punto_5_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -49,6 +59,9 @@ private:
 
     float tiempo = 0;
     float limite_y = 720;
-    bool escenario_creado = false, comienzo = false;
+    bool escenario_creado = false, comienzo = false, opcion = false;
+    int decision;
+
+    QString val = "";
 };
 #endif // MAINWINDOW_H

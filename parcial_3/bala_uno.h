@@ -18,7 +18,7 @@ private:
     fisicas * fisicas_bala;
 
 public:
-    bala_uno(float angulo_, float velocidad_inicial_, float radio_);
+    explicit bala_uno(float angulo_, float velocidad_inicial_, float radio_);
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,QWidget *widget);
 
@@ -30,6 +30,7 @@ public:
     float getVelocidad_inicial() const;
     int getRastro() const;
     void setRastro(int value);
+
 };
 
 #endif // BALA_UNO_H

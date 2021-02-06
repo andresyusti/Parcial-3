@@ -11,9 +11,10 @@ private:
     float y;
     float alto;
     float ancho;
+    float rango;
 
 public:
-    canon_uno(float x_, float y_, float alto_, float ancho_);
+    canon_uno(float x_, float y_, float alto_, float ancho_, float rango_);
 
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,QWidget *widget);

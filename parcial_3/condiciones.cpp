@@ -9,10 +9,10 @@ void condiciones::ofensivo_golpe_defensivo(float posox, float posoy, float posdx
 {
     cond = 0;
     for (velocidad_inicial = 0;velocidad_inicial < 400 ;velocidad_inicial +=1){
-        for (angulo=0; angulo < 90; angulo++){
-            velbx = velocidad_inicial*cos(angulo*3.14/180);
-            velby = velocidad_inicial*sin(angulo*3.14/180);
-            for(t=0;;t+=0.1){
+        for (angulo=90; angulo > -90; angulo--){
+            velbx = velocidad_inicial*cos((360+angulo)*3.14/180);
+            velby = velocidad_inicial*sin((360+angulo)*3.14/180);
+            for(t=0; ;t+=0.1){
                 posbx = posox+velbx*t;
                 posby = posoy+velby*t-(0.5*9.81*t*t);
                 if (posby < 0) break;
@@ -36,7 +36,7 @@ void condiciones::defensivo_defiende_ofensivo(float posox, float posoy, float po
             velbx = velocidad_inicial*cos((270 - angulo)*3.14/180);
             velby = velocidad_inicial*sin((270 - angulo)*3.14/180);
             t_aux = 0;
-            for(t=tiempo; ; t+=0.1){
+            for(t=tiempo; t <= 50; t+=0.1){
                 posbalaox = posox+vel_ox*t;
                 posbalaoy = posoy+vel_oy*t-(0.5*9.81*t*t);
 
@@ -60,12 +60,12 @@ void condiciones::ofensivo_defiende_defensivo(float vel_ox, float vel_oy, float 
 {
     cond = 0;
     float posbalaox, posbalaoy, posbaladx, posbalady, t_aux;
-    for(velocidad_inicial = 0; velocidad_inicial < 400; velocidad_inicial++){
+    for(velocidad_inicial = 0; velocidad_inicial < 800; velocidad_inicial++){
         for(angulo = 0; angulo < 90; angulo++){
             velbx = velocidad_inicial*cos(angulo*3.14/180);
             velby = velocidad_inicial*sin(angulo*3.14/180);
             t_aux = 1;
-            for(t = tiempo; t < 30; t += 0.1){
+            for(t = tiempo; t <= 50; t += 0.1){
                 //Aqui saco las posiciones de las tres balas
                 posbalaox = posox+vel_ox*t;                             //Primera bala ofensiva
                 posbalaoy = posoy+vel_oy*t-(0.5*9.81*t*t);

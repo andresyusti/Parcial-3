@@ -22,7 +22,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_modo_manual
+class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
@@ -51,12 +51,12 @@ public:
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
-    void setupUi(QMainWindow *modo_manual)
+    void setupUi(QMainWindow *MainWindow)
     {
-        if (modo_manual->objectName().isEmpty())
-            modo_manual->setObjectName(QString::fromUtf8("modo_manual"));
-        modo_manual->resize(1600, 730);
-        centralwidget = new QWidget(modo_manual);
+        if (MainWindow->objectName().isEmpty())
+            MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
+        MainWindow->resize(1600, 730);
+        centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         tiempo = new QLabel(centralwidget);
         tiempo->setObjectName(QString::fromUtf8("tiempo"));
@@ -132,45 +132,45 @@ public:
         manual = new QPushButton(centralwidget);
         manual->setObjectName(QString::fromUtf8("manual"));
         manual->setGeometry(QRect(1310, 530, 190, 30));
-        modo_manual->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(modo_manual);
+        MainWindow->setCentralWidget(centralwidget);
+        menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 1600, 21));
-        modo_manual->setMenuBar(menubar);
-        statusbar = new QStatusBar(modo_manual);
+        MainWindow->setMenuBar(menubar);
+        statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        modo_manual->setStatusBar(statusbar);
+        MainWindow->setStatusBar(statusbar);
 
-        retranslateUi(modo_manual);
+        retranslateUi(MainWindow);
 
-        QMetaObject::connectSlotsByName(modo_manual);
+        QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
 
-    void retranslateUi(QMainWindow *modo_manual)
+    void retranslateUi(QMainWindow *MainWindow)
     {
-        modo_manual->setWindowTitle(QApplication::translate("modo_manual", "MainWindow", nullptr));
-        tiempo->setText(QApplication::translate("modo_manual", "0.0", nullptr));
-        label_2->setText(QApplication::translate("modo_manual", "<html><head/><body><p><span style=\" font-weight:600;\">Tiempo:</span></p></body></html>", nullptr));
-        iniciar->setText(QApplication::translate("modo_manual", "Inicio", nullptr));
-        escenario->setText(QApplication::translate("modo_manual", "Escenario", nullptr));
-        label_3->setText(QApplication::translate("modo_manual", "<html><head/><body><p><span style=\" font-weight:600;\">distancia:</span></p></body></html>", nullptr));
-        label_4->setText(QApplication::translate("modo_manual", "<html><head/><body><p><span style=\" font-weight:600;\">Alturo O:</span></p></body></html>", nullptr));
-        label_5->setText(QApplication::translate("modo_manual", "<html><head/><body><p><span style=\" font-weight:600;\">Altura D:</span></p></body></html>", nullptr));
-        punto_1->setText(QApplication::translate("modo_manual", "Punto 1.", nullptr));
-        punto_2->setText(QApplication::translate("modo_manual", "Punto 2.", nullptr));
-        punto_3->setText(QApplication::translate("modo_manual", "Punto 3.", nullptr));
-        punto_4->setText(QApplication::translate("modo_manual", "Punto 4.", nullptr));
-        punto_5->setText(QApplication::translate("modo_manual", "Punto 5.", nullptr));
-        label->setText(QApplication::translate("modo_manual", "<html><head/><body><p><span style=\" font-weight:600;\">Si quieres usar el modo manual, llena</span></p><p><span style=\" font-weight:600;\">los siguientes recuadros con lo que te</span></p><p><span style=\" font-weight:600;\">te pide y darle en el boton manual</span></p></body></html>", nullptr));
-        label_6->setText(QApplication::translate("modo_manual", "<html><head/><body><p><span style=\" font-size:7pt; font-weight:600;\">Velocidad I:</span></p></body></html>", nullptr));
-        label_7->setText(QApplication::translate("modo_manual", "<html><head/><body><p><span style=\" font-weight:600;\">Angulo:</span></p></body></html>", nullptr));
-        manual->setText(QApplication::translate("modo_manual", "Modo manual.", nullptr));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
+        tiempo->setText(QApplication::translate("MainWindow", "0.0", nullptr));
+        label_2->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Tiempo:</span></p></body></html>", nullptr));
+        iniciar->setText(QApplication::translate("MainWindow", "Inicio", nullptr));
+        escenario->setText(QApplication::translate("MainWindow", "Escenario", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">distancia:</span></p></body></html>", nullptr));
+        label_4->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Alturo O:</span></p></body></html>", nullptr));
+        label_5->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Altura D:</span></p></body></html>", nullptr));
+        punto_1->setText(QApplication::translate("MainWindow", "Punto 1.", nullptr));
+        punto_2->setText(QApplication::translate("MainWindow", "Punto 2.", nullptr));
+        punto_3->setText(QApplication::translate("MainWindow", "Punto 3.", nullptr));
+        punto_4->setText(QApplication::translate("MainWindow", "Punto 4.", nullptr));
+        punto_5->setText(QApplication::translate("MainWindow", "Punto 5.", nullptr));
+        label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Si quieres usar el modo manual, llena</span></p><p><span style=\" font-weight:600;\">los siguientes recuadros con lo que te</span></p><p><span style=\" font-weight:600;\">te pide y darle en el boton manual</span></p></body></html>", nullptr));
+        label_6->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:7pt; font-weight:600;\">Velocidad I:</span></p></body></html>", nullptr));
+        label_7->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Angulo:</span></p></body></html>", nullptr));
+        manual->setText(QApplication::translate("MainWindow", "Modo manual.", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class modo_manual: public Ui_modo_manual {};
+    class MainWindow: public Ui_MainWindow {};
 } // namespace Ui
 
 QT_END_NAMESPACE
