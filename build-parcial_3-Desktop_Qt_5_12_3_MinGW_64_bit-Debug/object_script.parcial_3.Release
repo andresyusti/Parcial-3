@@ -1,0 +1,10 @@
+release/bala_uno.o
+release/canon_uno.o
+release/circulo.o
+release/condiciones.o
+release/fisicas.o
+release/main.o
+release/mainwindow.o
+release/rastro.o
+release/qrc_imagenes.o
+release/moc_mainwindow.o

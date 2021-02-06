@@ -50,7 +50,7 @@
      </rect>
     </property>
     <property name="maximum">
-     <double>100000000000000003889357755108838843130737249295202013334302382007691294289384896763079965607877701387326460311941213291353170611409437561654018367221268940354434586262616943544566455807655946219322240663552.000000000000000</double>
+     <double>1250.000000000000000</double>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="alturao">
@@ -63,7 +63,7 @@
      </rect>
     </property>
     <property name="maximum">
-     <double>100000000000000003889357755108838843130737249295202013334302382007691294289384896763079965607877701387326460311941213291353170611409437561654018367221268940354434586262616943544566455807655946219322240663552.000000000000000</double>
+     <double>700.000000000000000</double>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="alturad">
@@ -76,7 +76,7 @@
      </rect>
     </property>
     <property name="maximum">
-     <double>100000000000000003889357755108838843130737249295202013334302382007691294289384896763079965607877701387326460311941213291353170611409437561654018367221268940354434586262616943544566455807655946219322240663552.000000000000000</double>
+     <double>700.000000000000000</double>
     </property>
    </widget>
    <widget class="QGraphicsView" name="graphicsView">
@@ -234,11 +234,11 @@
       <x>1310</x>
       <y>370</y>
       <width>190</width>
-      <height>80</height>
+      <height>91</height>
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Si quieres usar el modo manual, llena&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;los siguientes recuadros con lo que te&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;te pide y darle en el boton manual&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Si quieres usar el modo manual, &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;llena los siguientes recuadros &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;con lo que te te pide y darle en &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;el boton modo manual&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
@@ -277,7 +277,7 @@
      </rect>
     </property>
     <property name="maximum">
-     <double>100000000000000003889357755108838843130737249295202013334302382007691294289384896763079965607877701387326460311941213291353170611409437561654018367221268940354434586262616943544566455807655946219322240663552.000000000000000</double>
+     <double>400.000000000000000</double>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="angulo_m">
@@ -289,8 +289,11 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="minimum">
+     <double>-90.000000000000000</double>
+    </property>
     <property name="maximum">
-     <double>100000000000000003889357755108838843130737249295202013334302382007691294289384896763079965607877701387326460311941213291353170611409437561654018367221268940354434586262616943544566455807655946219322240663552.000000000000000</double>
+     <double>90.000000000000000</double>
     </property>
    </widget>
    <widget class="QPushButton" name="manual">
@@ -304,6 +307,97 @@
     </property>
     <property name="text">
      <string>Modo manual.</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="encontrarvalores">
+    <property name="geometry">
+     <rect>
+      <x>1310</x>
+      <y>570</y>
+      <width>190</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Encontrar posibles valores.</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>1510</x>
+      <y>50</y>
+      <width>60</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Max 1250&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>1510</x>
+      <y>80</y>
+      <width>60</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Max 700&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>1510</x>
+      <y>110</y>
+      <width>60</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Max 700&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>1510</x>
+      <y>450</y>
+      <width>60</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Max 400&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>1510</x>
+      <y>480</y>
+      <width>91</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Max 90 Min -90&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>1500</x>
+      <y>180</y>
+      <width>97</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:7pt; font-weight:600;&quot;&gt;Primero seleccione &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:7pt; font-weight:600;&quot;&gt;una de estas &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:7pt; font-weight:600;&quot;&gt;opciones antes de &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:7pt; font-weight:600;&quot;&gt;empezar la &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:7pt; font-weight:600;&quot;&gt;simulacion&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>

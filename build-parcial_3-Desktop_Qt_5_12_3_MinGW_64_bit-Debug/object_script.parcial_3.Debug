@@ -1,0 +1,10 @@
+debug/bala_uno.o
+debug/canon_uno.o
+debug/circulo.o
+debug/condiciones.o
+debug/fisicas.o
+debug/main.o
+debug/mainwindow.o
+debug/rastro.o
+debug/qrc_imagenes.o
+debug/moc_mainwindow.o

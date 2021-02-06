@@ -55,12 +55,14 @@ void MainWindow::actualizar(){
 
     //Buscar velocidad inicial y angulo para saber donde lanzar la bala.
 
-    if (balao[0]->getTiempo() >= 2 && balao[0]->getTiempo() <= 2.05){
-        defensivo_defiende_ofensivo(canones[0]->getX(), ui->alturao->value(), canones[1]->getX(), ui->alturad->value(),balao[0]->getVelocidad_inicial(),balao[0]->getFisicas_bala()->getVelx(), balao[0]->getFisicas_bala()->getVely(), balao.back()->getTiempo());
-        balad.push_back(new bala_uno((270 - getAngulo()), getVelocidad_inicial(), (0.025 * ui->distancia->value())));
-        balad.back()->setPos(ui->distancia->value(), limite_y - ui->alturad->value());
-        scene->addItem(balad.back());
-        comienzo = true;
+    if (getVerificar_m() == true){
+        if (balao[0]->getTiempo() >= 2 && balao[0]->getTiempo() <= 2.05){
+            defensivo_defiende_ofensivo(canones[0]->getX(), ui->alturao->value(), canones[1]->getX(), ui->alturad->value(),balao[0]->getVelocidad_inicial(),balao[0]->getFisicas_bala()->getVelx(), balao[0]->getFisicas_bala()->getVely(), balao.back()->getTiempo());
+            balad.push_back(new bala_uno((270 - getAngulo()), getVelocidad_inicial(), (0.025 * ui->distancia->value())));
+            balad.back()->setPos(ui->distancia->value(), limite_y - ui->alturad->value());
+            scene->addItem(balad.back());
+            comienzo = true;
+        }
     }
 
     if (balad.size() > 0){
@@ -139,8 +141,22 @@ void MainWindow::actualizar(){
 
                 timer->stop();
             }
+        }
 
+        if (getVerificar_m() == false && balao[0]->getFisicas_bala()->getPosy() <= 0){
+            val = "el proyectil ofensivo no golpea al canon defensivo.";
+            QMessageBox::about (this, "Punto 1", val);
 
+            for (int i = 0; i < balao.size(); i++){
+                scene->removeItem(balao.at(i));
+            }
+            balao.clear();
+            for (int i = 0; i < balad.size(); i++){
+                scene->removeItem(balad.at(i));
+            }
+            balad.clear();
+
+            timer->stop();
         }
     }
 
@@ -226,6 +242,21 @@ void MainWindow::actualizar(){
                 timer->stop();
             }
         }
+        if (getVerificar_m() == false && balao[0]->getFisicas_bala()->getPosy() <= 0){
+            val = "el proyectil ofensivo no golpea al canon defensivo.";
+            QMessageBox::about (this, "Punto 2", val);
+
+            for (int i = 0; i < balao.size(); i++){
+                scene->removeItem(balao.at(i));
+            }
+            balao.clear();
+            for (int i = 0; i < balad.size(); i++){
+                scene->removeItem(balad.at(i));
+            }
+            balad.clear();
+
+            timer->stop();
+        }
     }
 
     if (decision == 3){
@@ -277,6 +308,21 @@ void MainWindow::actualizar(){
 
                 timer->stop();
             }
+        }
+        if (getVerificar_m() == false && balao[0]->getFisicas_bala()->getPosy() <= 0){
+            val = "el proyectil ofensivo no golpea al canon defensivo.";
+            QMessageBox::about (this, "Punto 3", val);
+
+            for (int i = 0; i < balao.size(); i++){
+                scene->removeItem(balao.at(i));
+            }
+            balao.clear();
+            for (int i = 0; i < balad.size(); i++){
+                scene->removeItem(balad.at(i));
+            }
+            balad.clear();
+
+            timer->stop();
         }
     }
 
@@ -364,6 +410,21 @@ void MainWindow::actualizar(){
                 timer->stop();
             }
         }
+        if (getVerificar_m() == false && balao[0]->getFisicas_bala()->getPosy() <= 0){
+            val = "el proyectil ofensivo no golpea al canon defensivo.";
+            QMessageBox::about (this, "Punto 4", val);
+
+            for (int i = 0; i < balao.size(); i++){
+                scene->removeItem(balao.at(i));
+            }
+            balao.clear();
+            for (int i = 0; i < balad.size(); i++){
+                scene->removeItem(balad.at(i));
+            }
+            balad.clear();
+
+            timer->stop();
+        }
     }
 
     if (decision == 5){
@@ -433,6 +494,21 @@ void MainWindow::actualizar(){
                 timer->stop();
             }
         }
+        if (getVerificar_m() == false && balao[0]->getFisicas_bala()->getPosy() <= 0){
+            val = "el proyectil ofensivo no golpea al canon defensivo.";
+            QMessageBox::about (this, "Punto 5", val);
+
+            for (int i = 0; i < balao.size(); i++){
+                scene->removeItem(balao.at(i));
+            }
+            balao.clear();
+            for (int i = 0; i < balad.size(); i++){
+                scene->removeItem(balad.at(i));
+            }
+            balad.clear();
+
+            timer->stop();
+        }
     }
 
 
@@ -475,12 +551,14 @@ void MainWindow::on_iniciar_clicked()
     if (opcion){
         if (balao.size() <= 0){
             if (escenario_creado){
-                tiempo = 0;
-                ofensivo_golpe_defensivo(0, ui->alturao->value(), ui->distancia->value(), ui->alturad->value());
-                balao.push_back(new bala_uno(getAngulo(), getVelocidad_inicial(), (0.05 * ui->distancia->value())));
-                balao.back()->setPos(0, limite_y - ui->alturao->value());
-                scene->addItem(balao.back());
+                if (!modo_manual){
+                    ofensivo_golpe_defensivo(0, ui->alturao->value(), ui->distancia->value(), ui->alturad->value());
+                    balao.push_back(new bala_uno(getAngulo(), getVelocidad_inicial(), (0.05 * ui->distancia->value())));
+                    balao.back()->setPos(0, limite_y - ui->alturao->value());
+                    scene->addItem(balao.back());
+                }
 
+                tiempo = 0;
                 timer->start(100);
             }
         }
@@ -489,6 +567,8 @@ void MainWindow::on_iniciar_clicked()
 
 void MainWindow::on_escenario_clicked()
 {
+    setVerificar_m(true);
+    modo_manual = false;
     escenario_creado = true;
     comienzo = false;
     timer->stop();
@@ -512,12 +592,19 @@ void MainWindow::on_escenario_clicked()
         scene->removeItem(balaod.at(i));
     }
     balaod.clear();
-    balad.clear();
+    for (int i = 0; i < circulos.size(); i++){
+        scene->removeItem(circulos.at(i));
+    }
+    circulos.clear();
     tiempo = 0;
     canones.push_back(new canon_uno(0, limite_y - ui->alturao->value(), 30, 30, 0.025*ui->distancia->value()));
     scene->addItem(canones.back());
+    circulos.push_back(new circulo(0.025*ui->distancia->value(), 0, limite_y - ui->alturao->value()));
+    scene->addItem(circulos.back());
     canones.push_back(new canon_uno(ui->distancia->value(), limite_y - ui->alturad->value(), 30, 30, 0.05*ui->distancia->value()));
     scene->addItem(canones.back());
+    circulos.push_back(new circulo(0.05*ui->distancia->value(), ui->distancia->value(), limite_y - ui->alturad->value()));
+    scene->addItem(circulos.back());
 }
 
 void MainWindow::on_punto_1_clicked()
@@ -549,3 +636,98 @@ void MainWindow::on_punto_5_clicked()
     decision = 5;
     opcion = true;
 }
+
+void MainWindow::on_manual_clicked()
+{
+    modo_manual = true;
+    escenario_creado = true;
+    comienzo = false;
+    timer->stop();
+
+    for (int i =0; i < rastros.size(); i++){
+        scene->removeItem(rastros.at(i));
+    }
+    rastros.clear();
+    for(int i = 0; i < canones.size(); i++){
+        scene->removeItem(canones.at(i));
+    }
+    canones.clear();
+    for (int i = 0; i < balao.size(); i++){
+        scene->removeItem(balao.at(i));
+    }
+    balao.clear();
+    for (int i = 0; i < balad.size(); i++){
+        scene->removeItem(balad.at(i));
+    }
+    balad.clear();
+    for (int i = 0; i < balaod.size(); i++){
+        scene->removeItem(balaod.at(i));
+    }
+    balad.clear();
+    for (int i = 0; i < circulos.size(); i++){
+        scene->removeItem(circulos.at(i));
+    }
+    circulos.clear();
+
+    if (opcion){
+        canones.push_back(new canon_uno(0, limite_y - ui->alturao->value(), 30, 30, 0.025*ui->distancia->value()));
+        scene->addItem(canones.back());
+        circulos.push_back(new circulo(0.025*ui->distancia->value(), 0, limite_y - ui->alturao->value()));
+        scene->addItem(circulos.back());
+        canones.push_back(new canon_uno(ui->distancia->value(), limite_y - ui->alturad->value(), 30, 30, 0.05*ui->distancia->value()));
+        scene->addItem(canones.back());
+        circulos.push_back(new circulo(0.05*ui->distancia->value(), ui->distancia->value(), limite_y - ui->alturad->value()));
+        scene->addItem(circulos.back());
+        balao.push_back(new bala_uno(ui->angulo_m->value(), ui->velocidad_i_m->value(), (0.05 * ui->distancia->value())));
+        balao.back()->setPos(0, limite_y - ui->alturao->value());
+        scene->addItem(balao.back());
+        verificar_manual(ui->angulo_m->value(), ui->velocidad_i_m->value(), 0, ui->alturao->value(), ui->distancia->value(), ui->alturad->value());
+
+        timer->start(100);
+    }
+}
+
+void MainWindow::on_encontrarvalores_clicked()
+{
+    canones.push_back(new canon_uno(0, limite_y - ui->alturao->value(), 30, 30, 0.025*ui->distancia->value()));
+    scene->addItem(canones.back());
+    canones.push_back(new canon_uno(ui->distancia->value(), limite_y - ui->alturad->value(), 30, 30, 0.05*ui->distancia->value()));
+    scene->addItem(canones.back());
+    tiempo = 0;
+
+    float velocidad_inicial, angulo, velbx, velby, t, posbx, posby;
+    int cond = 0, cond2;
+    val = "";
+
+    val += QString("%1   -   %2   -   %3   -   %4").arg("T").arg("A").arg("V").arg('\n');
+    for (velocidad_inicial = 0;velocidad_inicial < 400 ;velocidad_inicial +=1){
+        for (angulo=90; angulo > -90; angulo--){
+            velbx = velocidad_inicial*cos((360+angulo)*3.14/180);
+            velby = velocidad_inicial*sin((360+angulo)*3.14/180);
+            for(t=0; t < 70;t+=0.1){
+                posbx = 0+velbx*t;
+                posby = ui->alturao->value()+velby*t-(0.5*9.81*t*t);
+                if (posby < 0) break;
+                if (sqrt(pow((ui->distancia->value() - posbx), 2)+pow((ui->alturad->value() - posby), 2)) <= (0.05*ui->distancia->value())){
+                    val += QString("%1  -  %2   -   %3 %4").arg(t).arg(angulo).arg(velocidad_inicial).arg('\n');
+                    cond += 1;
+                    cond2 = 1;
+                    break;
+                }
+            }
+            if(cond2 == 1){
+                cond2 = 0;
+                break;
+            }
+            if(cond == 15) break;
+        }
+        if(cond == 15) break;
+    }
+    QMessageBox::about (this, "tabla de posibilidades", val);
+
+    for(int i = 0; i < canones.size(); i++){
+        scene->removeItem(canones.at(i));
+    }
+    canones.clear();
+}
+

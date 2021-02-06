@@ -14,6 +14,7 @@ using namespace std;
 #include "canon_uno.h"
 #include "condiciones.h"
 #include "rastro.h"
+#include "circulo.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -45,6 +46,10 @@ private slots:
 
     void on_punto_5_clicked();
 
+    void on_manual_clicked();
+
+    void on_encontrarvalores_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -55,11 +60,12 @@ private:
     QList<bala_uno *> balad;
     QList<bala_uno *> balaod;
     QList<canon_uno *> canones;
+    QList<circulo *> circulos;
     QList<rastro *> rastros;
 
     float tiempo = 0;
     float limite_y = 720;
-    bool escenario_creado = false, comienzo = false, opcion = false;
+    bool escenario_creado = false, comienzo = false, opcion = false, modo_manual = false;
     int decision;
 
     QString val = "";

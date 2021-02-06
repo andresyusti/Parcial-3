@@ -1,5 +1,20 @@
 #include "condiciones.h"
 
+bool condiciones::getVerificar_m() const
+{
+    return verificar_m;
+}
+
+float condiciones::getT() const
+{
+    return t;
+}
+
+void condiciones::setVerificar_m(bool value)
+{
+    verificar_m = value;
+}
+
 condiciones::condiciones()
 {
 
@@ -89,6 +104,21 @@ void condiciones::ofensivo_defiende_defensivo(float vel_ox, float vel_oy, float 
             if (cond == 1) break;
         }
         if (cond == 1) break;
+    }
+}
+
+void condiciones::verificar_manual(float angulo_, float velocidad_inicial_, float posox, float posoy, float posdx, float posdy)
+{
+    velbx = velocidad_inicial_*cos(angulo_*3.14/180);
+    velby = velocidad_inicial_*sin(angulo_*3.14/180);
+    for(t = 0; t <= 50; t += 0.1){
+        posbx = posox+velbx*(t);
+        posby = posoy+velby*(t)-(0.5*9.81*(t)*(t));
+        if (posby < 0) break;
+        if (sqrt(pow((posdx - posbx), 2)+pow((posdy - posby), 2)) <= (0.05*posdx)){
+            verificar_m = true;
+            break;
+        }
     }
 }
 
